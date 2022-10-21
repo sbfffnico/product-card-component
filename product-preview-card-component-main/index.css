@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  background: hsl(30, 38%, 92%);
+  height: 100%;
+  width: 100%;
+}
+.container {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+}
+.card {
+  display: grid;
+  place-items: center;
+  grid-template-areas: 'left right';
+  background: white;
+  border-radius: 2%;
+}
+.left-side, .right-side {
+  height: 30rem;
+  width: 20rem;
+}
+.desktop-img {
+  max-height: 100%;
+  border-radius: 2% 0 0 2%;
+}
+.mobile-img {
+  display: none;
+}
+.left-side {
+  grid-area: left;
+}
+.right-side {
+  grid-area: right;
+  display: grid;
+  grid-template-areas: 
+    'item item'
+    'brand brand'
+    'description description'
+    'new_price old_price'
+    'button button';
+  font-family: 'Montserrat';
+  font-size: 14px;
+}
+.inner-right-side {
+  padding-left: 1.5625rem;
+  padding-right: 1.5625rem;
+  max-width: 75%;
+}
+.item {
+  padding-top: 1.5625rem;
+  grid-area: item;
+  color: hsl(228, 12%, 48%);
+}
+.brand {
+  margin-top: -1rem;
+  grid-area: brand;
+  font-family: 'Fraunces';
+}
+.description {
+  margin-top: -1rem;
+  grid-area: description;
+  color: hsl(228, 12%, 48%);
+  line-height: 1.4rem;
+}
+.new_price {
+  grid-area: new_price;
+  font-family: 'Fraunces';
+  color: hsl(158, 36%, 37%);
+}
+.old_price {
+  grid-area: old_price;
+  margin-left: -7rem;
+  margin-top: 0.5rem;
+}
+.button {
+  grid-area: button;
+  width: 85%;
+  margin-left: 50%;
+  margin-bottom: 1.5625rem;
+  border-radius: 10px;
+  border: transparent;
+  background-color: hsl(158, 36%, 37%);
+  color: white;
+  font-family: 'Montserrat';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%);
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    height: 100%;
+    width: 100%;
+    place-items: center;
+  }
+  .desktop-img {
+    display: none;
+  }
+  .mobile-img {
+    display: block;
+    
+  }
+  .card {
+    grid-template-areas: 'left left' 'right right' 'right right';
+    place-items: center;
+    margin: 2rem;
+
+  }
+  .left-side, .right-side {
+    width: 100%;
+    border: 1px solid black;
+  }
+}
+
+
+
+
+.attribution {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  font-size: 11px; text-align: center;
+  transform: translate(-50%, -50%);
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%);
+}
